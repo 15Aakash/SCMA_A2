@@ -76,6 +76,14 @@ head(subset_data$Possess_ration_card,1)
 head(subset_data$milkprott_q,1)
 head(subset_data$foodtotal_q,1)
 
+# Visualize the relationship between food consumption and MPCE
+ggplot(subset_data, aes(x = MPCE_MRP, y = foodtotal_q)) +
+  geom_point() +
+  geom_smooth(method = "lm", col = "red") +
+  labs(title = "Relationship between MPCE and Total Food Consumption",
+       x = "Monthly Per Capita Expenditure (MPCE)",
+       y = "Total Food Consumption (foodtotal_q)")
+
 
 
 
